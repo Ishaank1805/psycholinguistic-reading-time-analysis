@@ -325,42 +325,25 @@ print("=" * 60)
 # pseudo-affixed (root doesn't exist) vs regularly affixed (root exists)
 
 # We'll search for these words in our dataset
+# Select 5 matched pairs: all length 6, similar frequency range (~6.5-7.5)
+# Pseudo-affixed: surface form contains "-er" but root is not a real
+# related word (morphological decomposition fails)
 pseudo_affixed_candidates = {
-    # word: (pseudo-root, affix, explanation)
     'finger': ('fing', '-er', 'no root "fing"'),
     'corner': ('corn', '-er', '"corn" is unrelated'),
     'master': ('mast', '-er', '"mast" is unrelated'),
-    'winter': ('wint', '-er', 'no root "wint"'),
-    'hammer': ('hamm', '-er', 'no root "hamm"'),
-    'butter': ('butt', '-er', '"butt" is unrelated'),
-    'number': ('numb', '-er', '"numb" is unrelated meaning'),
-    'manner': ('mann', '-er', 'no root "mann"'),
     'silver': ('silv', '-er', 'no root "silv"'),
-    'matter': ('matt', '-er', 'no root "matt"'),
-    'mother': ('moth', '-er', '"moth" is unrelated'),
-    'brother': ('broth', '-er', '"broth" is unrelated'),
-    'father': ('fath', '-er', 'no root "fath"'),
-    'water': ('wat', '-er', 'no root "wat"'),
+    'sister': ('sist', '-er', 'no root "sist"'),
 }
 
+# Regular-affixed: surface form contains "-er" and root IS a real word
+# (morphological decomposition succeeds)
 regular_affixed_candidates = {
-    # word: (root, affix, explanation)
-    'driver': ('drive', '-er', 'one who drives'),
-    'speaker': ('speak', '-er', 'one who speaks'),
-    'worker': ('work', '-er', 'one who works'),
-    'player': ('play', '-er', 'one who plays'),
-    'singer': ('sing', '-er', 'one who sings'),
-    'reader': ('read', '-er', 'one who reads'),
-    'writer': ('write', '-er', 'one who writes'),
-    'dancer': ('dance', '-er', 'one who dances'),
-    'leader': ('lead', '-er', 'one who leads'),
-    'killer': ('kill', '-er', 'one who kills'),
-    'owner': ('own', '-er', 'one who owns'),
-    'hunter': ('hunt', '-er', 'one who hunts'),
-    'longer': ('long', '-er', 'comparative'),
-    'higher': ('high', '-er', 'comparative'),
-    'older': ('old', '-er', 'comparative'),
-    'smaller': ('small', '-er', 'comparative'),
+    'closer': ('close', '-er', 'comparative of close'),
+    'higher': ('high', '-er', 'comparative of high'),
+    'larger': ('large', '-er', 'comparative of large'),
+    'longer': ('long', '-er', 'comparative of long'),
+    'lesser': ('less', '-er', 'comparative of less'),
 }
 
 # Find which of these words appear in our dataset
